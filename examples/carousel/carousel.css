@@ -1,0 +1,93 @@
+/* Carousel */
+/* ----------------------------------------------------------*/
+div.carousel {
+	position: relative;
+	height: 200px;
+	width: 500px;
+
+	overflow: hidden;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+div.carousel div.wrapper {
+	height: 100%;
+	width: 2000px;
+
+	font-size: 0;
+	transition: margin 400ms;
+}
+
+div.carousel > span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 44px;
+	width: 44px;
+
+	background-color: #000;
+	cursor: pointer;
+	margin-top: -22px;
+}
+
+div.carousel > span.next {
+	left: auto;
+	right: 0;
+}
+
+div.carousel div.wrapper > div {
+	display: inline-block;
+	height: 100%;
+	width: 500px;
+}
+
+div.carousel.slide1 div.wrapper {
+	margin-left: -500px;
+}
+
+div.carousel.slide2 div.wrapper {
+	margin-left: -1000px;
+}
+
+div.carousel.slide3 div.wrapper {
+	margin-left: -1500px;
+}
+
+/* Basic Carousel */
+/* ----------------------------------------------------------*/
+div.carousel.basic[class*=slide] > span.previous,
+div.carousel.bullet[class*=slide] > span.previous {
+	display: block;
+}
+
+div.carousel.basic > span.previous,
+div.carousel.basic.slide3 > span.next,
+div.carousel.basic.slide0 > span.previous,
+
+div.carousel.bullet > span.previous,
+div.carousel.bullet.slide3 > span.next,
+div.carousel.bullet.slide0 > span.previous {
+	display: none;
+}
+
+/* Bullet Carousel */
+/* ----------------------------------------------------------*/
+div.carousel ul {
+	font-size: 0;
+	padding: 0;
+	text-align: center;
+	margin-top: -25px;
+}
+
+div.carousel ul li {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+
+	background-color: #000;
+	cursor: pointer;
+	margin: 2px;
+}
