@@ -58,6 +58,12 @@
 			resetTimer();
 		}
 
+		/**
+		 * Resets the timer if we have a delay in our options
+		 *
+		 * @method resetTimer
+		 * @private
+		 */
 		function resetTimer() {
 			if (!options.delay)
 				return false;
@@ -124,8 +130,6 @@
 		 * previous carousel slide
 		 *
 		 * @method previous
-		 * @example
-		 *   carousel.previous();
 		 */
 		carousel.previous = function previous() {
 			carousel.slide(-1);
@@ -135,8 +139,6 @@
 		 * next carousel slide
 		 *
 		 * @method next
-		 * @example
-		 *   carousel.next();
 		 */
 		 carousel.next = function next() {
 			carousel.slide(1);
@@ -147,8 +149,6 @@
 		 *
 		 * @method slide
 		 * @param {Integer} n
-		 * @example
-		 *   carousel.slide(3);
 		 */
 		carousel.slide = function slide(n) {
 			resetTimer();
@@ -164,6 +164,12 @@
 			element.className = element.className.replace(/slide[0-9]+/g, '').trim() + ' slide' + current;
 		};
 
+		/**
+		 * jump to a certain slide
+		 *
+		 * @method jump
+		 * @param {Integer} n
+		 */
 		carousel.jump = function jump(n) {
 			carousel.slide(n - current);
 		};
