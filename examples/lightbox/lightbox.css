@@ -1,0 +1,58 @@
+body {
+    font: 14px/20px Arial;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.view {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+
+    width: 600px;
+
+    margin-left: -300px;
+
+    background-color: #fff;
+}
+
+.view > a {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.view > a:after {
+    display: block;
+    content: 'X';
+
+    line-height: 40px;
+    text-align: center;
+}
+
+.view .content {
+}
+
+.view header {
+    background-color: #82b7d7;
+    color: #fff;
+    font-size: 26px;
+    line-height: 50px;
+    padding: 0 15px;
+}
