@@ -24,7 +24,7 @@
 			current  = 0,
 			defaults = {
 				navigation: 1,     // 0 = off, 1 = arrows only, 2 = arrows + bullets
-				loop: 0,           // 0 = off, 1 = goto first,  2 = NodeShuffling
+				loop: 0,           // 0 = off, 1 = on
 				delay: 0           // delay above 0 auto-enables loop: 1
 			},
 			timer;

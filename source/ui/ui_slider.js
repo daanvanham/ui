@@ -4,7 +4,7 @@
 	'use strict';
 
 	/**
-	 * Simple __slider__ class with easy to change options for enabling navigation
+	 * Simple __slider__ class
 	 *
 	 *     var instance = UI.instance('slider'),
 	 *         element = document.querySelector('div.slider'),
