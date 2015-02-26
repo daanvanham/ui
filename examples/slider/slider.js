@@ -3,8 +3,8 @@
 ;(function() {
 	'use strict';
 
-	var instance = UI.instance('slider'),
-		basic    = new instance(document.querySelector('div.basic')),
-		double   = new instance(document.querySelector('div.double'), {controls: 2}),
-		steps    = new instance(document.querySelector('div.steps'), {step: 20});
+	var module = UI.require('slider'),
+		basic  = new module(document.querySelector('div.basic')),
+		double = new module(document.querySelector('div.double'), {controls: 2}),
+		steps  = new module(document.querySelector('div.steps'), {step: 20});
 })();

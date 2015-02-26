@@ -3,9 +3,9 @@
 ;(function() {
 	'use strict';
 
-	var instance  = UI.instance('carousel'),
-		basic     = new instance(document.querySelector('div.carousel.basic')),
-		bullet    = new instance(document.querySelector('div.carousel.bullet'), {navigation: 2}),
-		loop      = new instance(document.querySelector('div.carousel.loop'), {loop: 1}),
-		automatic = new instance(document.querySelector('div.carousel.automatic'), {delay: 3000});
+	var module  = UI.require('carousel'),
+		basic     = new module(document.querySelector('div.carousel.basic')),
+		bullet    = new module(document.querySelector('div.carousel.bullet'), {navigation: 2}),
+		loop      = new module(document.querySelector('div.carousel.loop'), {loop: 1}),
+		automatic = new module(document.querySelector('div.carousel.automatic'), {delay: 3000});
 })();
