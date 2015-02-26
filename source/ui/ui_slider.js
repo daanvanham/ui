@@ -6,13 +6,13 @@
 	/**
 	 * Simple __slider__ class
 	 *
-	 *     var instance = UI.instance('slider'),
+	 *     var module = UI.require('slider'),
 	 *         element = document.querySelector('div.slider'),
 	 *         options = {
 	 *           step: 10,
 	 *           controls: 2
 	 *         },
-	 *         slider = new instance(element, options);
+	 *         slider = new module(element, options);
 	 *
 	 * @class Slider
 	 * @param {Node} element

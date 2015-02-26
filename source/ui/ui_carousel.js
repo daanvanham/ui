@@ -6,12 +6,12 @@
 	/**
 	 * Simple __carousel__ class with easy to change options for enabling navigation
 	 *
-	 *     var instance = UI.instance('carousel'),
+	 *     var module = UI.require('carousel'),
 	 *         element  = document.querySelector('div.carousel'),
 	 *         options  = {
 	 *             delay: 3000
 	 *         },
-	 *         carousel = new instance(element, options);
+	 *         carousel = new module(element, options);
 	 *
 	 * @class Carousel
 	 * @param {Node} element
