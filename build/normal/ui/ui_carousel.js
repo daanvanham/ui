@@ -9,7 +9,8 @@
 	 *     var module = UI.require('carousel'),
 	 *         element  = document.querySelector('div.carousel'),
 	 *         options  = {
-	 *             delay: 3000
+	 *             delay: 3000,
+	 *             items: 1
 	 *         },
 	 *         carousel = new module(element, options);
 	 *
@@ -25,7 +26,9 @@
 			defaults = {
 				navigation: 1,     // 0 = off, 1 = arrows only, 2 = arrows + bullets
 				loop: 0,           // 0 = off, 1 = on
-				delay: 0           // delay above 0 auto-enables loop: 1
+				delay: 0,          // delay above 0 auto-enables loop: 1
+				items: 1,          // amount of items per slide
+				type: 'left'
 			},
 			timer;
 
@@ -51,6 +54,9 @@
 
 			if (options.navigation)
 				navigation();
+
+			if (options.items !== 1)
+				slidify();
 
 			if (options.delay && !options.loop)
 				options.loop = 1;
@@ -127,6 +133,32 @@
 		}
 
 		/**
+		 * function called when we want multiple items per slide
+		 *
+		 * @method slidify
+		 * @return void
+		 * @private
+		 */
+		function slidify() {
+			var items = elements.wrapper.children,
+				i = items.length - 1,
+				c = 0,
+				slide;
+
+			while (i >= 0) {
+				if (c % options.items === 0) {
+					slide = document.createElement('div');
+					slide.className = 'slide';
+					elements.wrapper.appendChild(slide);
+				}
+
+				slide.appendChild(items[0]);
+				--i;
+				++c;
+			}
+		}
+
+		/**
 		 * previous carousel slide
 		 *
 		 * @method previous
@@ -151,6 +183,8 @@
 		 * @param {Integer} n
 		 */
 		carousel.slide = function slide(n) {
+			var width = elements.wrapper.children[0].offsetWidth;
+
 			resetTimer();
 
 			if (!options.loop && ((n === 1 && current >= elements.wrapper.children.length - 1) || (n === -1 && current === 0)))
@@ -161,6 +195,7 @@
 			if (options.loop && current < 0)
 				current += elements.wrapper.children.length;
 
+			elements.wrapper.style['margin' + options.type.charAt(0).toUpperCase() + options.type.slice(1)] = -(current * width) + 'px';
 			element.className = element.className.replace(/slide[0-9]+/g, '').trim() + ' slide' + current;
 		};
 
