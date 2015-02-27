@@ -7,5 +7,6 @@
 		basic     = new module(document.querySelector('div.carousel.basic')),
 		bullet    = new module(document.querySelector('div.carousel.bullet'), {navigation: 2}),
 		loop      = new module(document.querySelector('div.carousel.loop'), {loop: 1}),
-		automatic = new module(document.querySelector('div.carousel.automatic'), {delay: 3000});
+		automatic = new module(document.querySelector('div.carousel.automatic'), {delay: 3000}),
+		multiAuto = new module(document.querySelector('div.carousel.automatic.multiple'), {delay: 3000, items: 3, loop: 1});
 })();

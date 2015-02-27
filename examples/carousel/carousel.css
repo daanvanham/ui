@@ -44,18 +44,6 @@ div.carousel div.wrapper > div {
 	width: 500px;
 }
 
-div.carousel.slide1 div.wrapper {
-	margin-left: -500px;
-}
-
-div.carousel.slide2 div.wrapper {
-	margin-left: -1000px;
-}
-
-div.carousel.slide3 div.wrapper {
-	margin-left: -1500px;
-}
-
 /* Basic Carousel */
 /* ----------------------------------------------------------*/
 div.carousel.basic[class*=slide] > span.previous,
@@ -90,4 +78,20 @@ div.carousel ul li {
 	background-color: #000;
 	cursor: pointer;
 	margin: 2px;
+}
+
+/* Multiple Carousel */
+/* ----------------------------------------------------------*/
+div.multiple {
+	width: 300px;
+}
+
+div.multiple div.wrapper > div {
+	width: 300px;
+}
+
+div.multiple .slide > div {
+	display: inline-block;
+	height: 100%;
+	width: 100px;
 }

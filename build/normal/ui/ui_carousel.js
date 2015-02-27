@@ -145,7 +145,7 @@
 				c = 0,
 				slide;
 
-			while (i >= 0) {
+			while (c <= i) {
 				if (c % options.items === 0) {
 					slide = document.createElement('div');
 					slide.className = 'slide';
@@ -153,7 +153,6 @@
 				}
 
 				slide.appendChild(items[0]);
-				--i;
 				++c;
 			}
 		}
